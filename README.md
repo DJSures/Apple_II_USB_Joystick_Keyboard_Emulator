@@ -7,5 +7,8 @@ The shortcut keys can change the joystick mode. By default, the joystick emulate
 # Keyboard Modes
 The shortcut keys CTRL-A twice will change the number pad between cursor keys or numbers. Of course, your keyboard of an authentic Apple II won't have this magical number pad. A clone will! 
 
+# ALT-F4 Shortcut
+I made a shortcut for pressing ALT-F4 on the keyboard, by hitting CTRL-Q twice. The reason was to close the foreground application on my Apple quickly.
+
 # Sound
 To receive the startup beep and shortcut key combination beeps, connect a speaker to pin #16
