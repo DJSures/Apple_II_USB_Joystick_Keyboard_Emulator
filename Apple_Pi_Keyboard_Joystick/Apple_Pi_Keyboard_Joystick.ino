@@ -8,7 +8,7 @@
 // ** Keyboard & Joystick USB HID for Teensy or Pro Micro               **
 // ** By DJ Sures (Synthiam.com) (c)2019                                **
 // **                                                                   **
-// ** Updated: April 4, 2019                                            **
+// ** Updated: 11/26/2019                                               **
 // **                                                                   **
 // ***********************************************************************
 
@@ -31,17 +31,20 @@
 #define JoyAxisY 1
 #define Speaker 16
 
-// toggle with CTRL-A two times
+// toggle with CTRL-a two times
 // 0 = regular keyboard
 // 1 = number pad is arrow keys
 int keyboardMode = 0;
 int ctrlacnt = 0;
 
-// toggle with CTRL-Z two times
+// toggle with CTRL-z two times
 // 0 = mouse mode
 // 1 = joystick mode
 int joystickMode = 0;
 int ctrlzcnt = 0;
+
+// hit CTRL-q two times press ALT-F4 (Close current program)
+int ctrlqcnt = 0;
 
 void setup() {
 
@@ -197,7 +200,7 @@ void strobe() {
   //    val = KEY_LEFT_ARROW;
   else if (val == 21)
     val = KEY_RIGHT_ARROW;
-  else if (val == 1) {
+  else if (val == 1) { // a
 
     ctrlacnt++;
 
@@ -214,11 +217,13 @@ void strobe() {
         keyboardMode = 0;
         tone(Speaker, NOTE_C4, 100);
       }
+
+      return;
     } else {
 
       tone(Speaker, NOTE_C3, 50);
     }
-  } else if (val == 26) {
+  } else if (val == 26) { // z
 
     ctrlzcnt++;
 
@@ -235,14 +240,37 @@ void strobe() {
         joystickMode = 0;
         tone(Speaker, NOTE_E4, 100);
       }
+
+      return;
     } else {
 
       tone(Speaker, NOTE_E3, 50);
+    }
+  } else if (val == 17) { // q
+
+    ctrlqcnt++;
+
+    if (ctrlqcnt == 2) {
+
+      ctrlqcnt = 0;
+
+      Keyboard.press(KEY_LEFT_ALT);
+      Keyboard.press(KEY_F4);
+      delay(100);
+      Keyboard.releaseAll();
+
+      tone(Speaker, NOTE_A4, 100);
+
+      return;
+    } else {
+
+      tone(Speaker, NOTE_A3, 50);
     }
   } else {
 
     ctrlzcnt = 0;
     ctrlacnt = 0;
+    ctrlqcnt = 0;
   }
 
   if (keyboardMode == 1) {
