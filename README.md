@@ -1,6 +1,8 @@
 # Apple_II_USB_Joystick_Keyboard_Emulator
 An Arduino Micro keyboard and Joystick emulator over USB. It emulates the keyboard as a real HID USB Keyboard. It also emulates a Joystick in either Mouse or Joystick mode. Shortcut keys change the mode.
 
+[![](http://img.youtube.com/vi/vekLtMoc8dY/0.jpg)](http://www.youtube.com/watch?v=vekLtMoc8dY "Atomic Apple Pi Overview")
+
 # Joystick Modes
 The shortcut keys can change the joystick mode. By default, the joystick emulates a mouse USB device. Pressing CTRL-Z twice will beep the speaker and change the joystick between USB mouse and USB joystick modes
 
