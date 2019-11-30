@@ -29,6 +29,7 @@
 #define JoyButton2 14
 #define JoyAxisX 0
 #define JoyAxisY 1
+#define Speaker 16
 
 // toggle with CTRL-A two times
 // 0 = regular keyboard
@@ -69,7 +70,7 @@ void setup() {
   pinMode(JoyButton1, INPUT_PULLUP);
   pinMode(JoyButton2, INPUT_PULLUP);
 
-  tone(16, NOTE_C6, 100);
+  tone(Speaker, NOTE_C6, 100);
 }
 
 void loop() {
@@ -207,15 +208,15 @@ void strobe() {
       if (keyboardMode == 0) {
 
         keyboardMode = 1;
-        tone(16, NOTE_C5, 100);
+        tone(Speaker, NOTE_C5, 100);
       } else {
 
         keyboardMode = 0;
-        tone(16, NOTE_C4, 100);
+        tone(Speaker, NOTE_C4, 100);
       }
     } else {
 
-      tone(16, NOTE_C3, 50);
+      tone(Speaker, NOTE_C3, 50);
     }
   } else if (val == 26) {
 
@@ -228,15 +229,15 @@ void strobe() {
       if (joystickMode == 0) {
 
         joystickMode = 1;
-        tone(16, NOTE_E5, 100);
+        tone(Speaker, NOTE_E5, 100);
       } else {
 
         joystickMode = 0;
-        tone(16, NOTE_E4, 100);
+        tone(Speaker, NOTE_E4, 100);
       }
     } else {
 
-      tone(16, NOTE_E3, 50);
+      tone(Speaker, NOTE_E3, 50);
     }
   } else {
 
