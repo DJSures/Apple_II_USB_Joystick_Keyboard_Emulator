@@ -7,7 +7,9 @@ Playing games: https://www.youtube.com/live/Q85PDDTFcNY
 Overview: https://www.youtube.com/watch?v=vekLtMoc8dY
 
 Keyboard PCB
+
 ![image](https://user-images.githubusercontent.com/49293683/224582328-084d8861-73e0-4154-a644-0f4036c24c04.png)
+
 ![image](https://user-images.githubusercontent.com/49293683/224582356-30af5be6-6d61-473c-a7b1-181f1d932f8c.png)
 
 
